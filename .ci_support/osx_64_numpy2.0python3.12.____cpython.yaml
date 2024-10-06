@@ -18,6 +18,8 @@ macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
 - '2.0'
+orc:
+- 2.0.2
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -29,3 +31,4 @@ target_platform:
 zip_keys:
 - - python
   - numpy
+  - channel_sources
