@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 4
+  number: 5
   skip: true  # [win]
 
 requirements:
@@ -28,6 +28,7 @@ requirements:
     - pip
   run:
     - python
+    - setuptools
     - pytorch >=1.13
     - optree >=0.4.1
     - numpy
