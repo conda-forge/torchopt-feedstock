@@ -28,6 +28,7 @@ requirements:
     - pip
   run:
     - python
+    - setuptools
     - pytorch >=1.13
     - optree >=0.4.1
     - numpy
