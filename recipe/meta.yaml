@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/torchopt-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/torchopt-{{ version }}.tar.gz
   sha256: 7b5f1628318a89891b14b7eecf26adde0e9c0590842a16a99fcaa09a91c59c56
 
 build:
