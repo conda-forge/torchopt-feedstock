@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 11
+  number: 12
   skip: true  # [win]
 
 requirements:
