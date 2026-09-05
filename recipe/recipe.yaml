@@ -1,23 +1,26 @@
-{% set name = "torchopt" %}
-{% set version = "0.7.3" %}
+schema_version: 1
+
+context:
+  name: torchopt
+  version: "0.7.3"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/torchopt-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/torchopt-${{ version }}.tar.gz
   sha256: 7b5f1628318a89891b14b7eecf26adde0e9c0590842a16a99fcaa09a91c59c56
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 14
-  skip: true  # [win]
+  number: 15
+  skip: win
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
-    - {{ compiler('cxx') }}
-    - {{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
     - cmake
   host:
     - python
@@ -35,19 +38,17 @@ requirements:
     - python-graphviz
     - typing-extensions >=4.0.0
 
-test:
-  imports:
-    - torchopt
-  commands:
-    - pip check
-  requires:
-    - pip
+tests:
+  - python:
+      imports:
+        - torchopt
+      pip_check: true
 
 about:
   summary: An efficient library for differentiable optimization for PyTorch.
-  home: https://github.com/metaopt/torchopt
   license: Apache-2.0
   license_file: LICENSE
+  homepage: https://github.com/metaopt/torchopt
 
 extra:
   recipe-maintainers:
